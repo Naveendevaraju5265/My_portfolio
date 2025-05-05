@@ -1,4 +1,4 @@
-<div align="center"><h2><strong>Personal Portfolio Website</strong></h2> <h2><strong><a href="https://naveen-devaraju.netlify.app">Visit My Portfolio</strong></h2></a> </div>
+<div align="center"><h2><strong>Personal Portfolio Website</strong></h2> <h2><strong><a href="https://naveen-devaraju.netlify.app" target="_blank">Visit My Portfolio</strong></h2></a> </div>
 <h2><strong>Features 📋</strong></h2>
 &nbsp;&nbsp;&nbsp;&nbsp;⚡ Fully Responsive <br>
 &nbsp;&nbsp;&nbsp;&nbsp;⚡️ Valid HTML5 & CSS3 <br>
