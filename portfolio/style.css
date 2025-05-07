@@ -1189,6 +1189,12 @@ footer a i{
     }
     .home{
         grid-template-columns: 1fr;
+        width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
     }
     .home-image{
         margin-bottom:5rem ;
@@ -1200,6 +1206,12 @@ footer a i{
         justify-content: space-between;
         align-items: center; 
         padding: 2rem 0; 
+        width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
     }
     .about .img-about{
         position: relative;
@@ -1214,15 +1226,60 @@ footer a i{
     .about-content{
         padding: 1rem;
         max-width: 800px;
+        height: auto !important;
     }
     .about-text{
         margin-bottom: 2rem;
     }
     .timeline{
         padding-bottom: 30px;
+        height: auto !important;
+        margin-bottom: 2rem;
     }
     .skill-main{
         grid-template-columns: 1fr;
+    }
+    .info-about1{
+        left: 55%;
+        top: 10%;
+    }
+    .info-about2{
+        left: 25%;
+        top: 55%;
+    }
+    .info-about3{
+        left: 60%;
+        top: 75%;
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 15%;
+        left: 90px;
+        right: 90px;
+        height: 2px;
+        background-color: #1a80ed;
+        z-index: 0;
+    }
+    .institution1{
+        display: flex;
+        padding: 5px 35px;
+        margin-left: 20px;
+        color: var(--hover-color);
+        position: relative;
+    }
+    .institution2{
+        display: flex;
+        padding: 5px 35px;
+        margin-left: 20px;
+        color: var(--hover-color);
+    }
+    
+    .institution3{
+        display: flex;
+        padding: 5px 35px;
+        color: var(--hover-color);
+        margin-left: 5px;
     }
     footer p{
         font-size: .8rem;
@@ -1235,15 +1292,27 @@ footer a i{
     footer p{
         font-size: .6rem;
     }
+    .home{
+        grid-template-columns: 1fr;
+        width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
     .about{
-        width: 100%;
         flex-direction: column;
         display: flex;
         justify-content: space-between;
         align-items: center; 
-    }
-    .fillter-buttons .button{
-        font-size: 0.8rem;
+        padding: 2rem 0; 
+        width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
     }
     .img-about{
         position: relative;
@@ -1251,8 +1320,65 @@ footer a i{
     .img-about img{
         width: 300px;
     }
+    /* Removed display:none to show animations on mobile */
     .info-about1, .info-about2, .info-about3{
-        display: none;
+        display: block;
+        width: 70px;
+        height: 70px;
+        animation: morph 6s linear infinite;
+        position: absolute;
+        box-shadow: var(--neon-box-shadow);
+        border: 1px solid var(--hover-color);
+        outline: 2px solid var(--bg-color);
+        border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+        font-size: 0.7rem;
+        padding: 8px;
+        z-index: 100;
+    }
+    .info-about1{
+        left: 55%;
+        top: 10%;
+    }
+    .info-about2{
+        left: 10%;
+        top: 55%;
+    }
+    .info-about3{
+        left: 75%;
+        top: 75%;
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 15%;
+        left: 75px;
+        right: 75px;
+        height: 2px;
+        background-color: #1a80ed;
+        z-index: 0;
+    }
+    .institution1{
+        display: flex;
+        padding: 5px 0px;
+        margin-left: 10px;
+        color: var(--hover-color);
+        position: relative;
+    }
+    .institution2{
+        display: flex;
+        padding: 5px 0px;
+        margin-left: 10px;
+        color: var(--hover-color);
+        position: relative;
+    }
+    
+    .institution3{
+        display: flex;
+        padding: 5px 0px;
+        color: var(--hover-color);
+        margin-left: 5px;
+        position: relative;
+        white-space: nowrap;
     }
     .img-about p{
         font-size: 1rem;
