@@ -1,4 +1,36 @@
 let words=document.querySelectorAll(".word");
+const themeToggle=document.getElementById("theme-toggle");
+let savedTheme=null;
+
+try{
+    savedTheme=localStorage.getItem("portfolio-theme");
+}catch(error){
+    console.error("Unable to load the saved theme preference.",error);
+}
+
+if(savedTheme==="light"){
+    document.body.classList.add("light-theme");
+}
+
+function updateThemeToggle(){
+    const isLightTheme=document.body.classList.contains("light-theme");
+    themeToggle.classList.toggle("bx-bulb",!isLightTheme);
+    themeToggle.classList.toggle("bxs-bulb",isLightTheme);
+    themeToggle.setAttribute("aria-label",isLightTheme ? "Switch to dark mode" : "Switch to light mode");
+}
+
+updateThemeToggle();
+themeToggle.addEventListener("click",()=>{
+    const isLightTheme=document.body.classList.toggle("light-theme");
+    updateThemeToggle();
+
+    try{
+        localStorage.setItem("portfolio-theme",isLightTheme ? "light" : "dark");
+    }catch(error){
+        console.error("Unable to save the theme preference.",error);
+    }
+});
+
 words.forEach((word)=>{
     let letters=word.textContent.split("");
     word.textContent="";
@@ -111,11 +143,49 @@ scrollBottom.forEach((el)=>observer.observe(el));
 const scrollTop=document.querySelectorAll(".scroll-top");
 scrollTop.forEach((el)=>observer.observe(el));
 
+const projectTitles = Array.from(document.querySelectorAll(".port-content h3[data-tooltip]"))
+    .map(heading => ({
+        heading,
+        title: heading.querySelector("span"),
+        originalMarkup: heading.querySelector("span").innerHTML,
+        fullTitle: heading.dataset.tooltip
+    }));
+
+function updateProjectTitleTruncation(){
+    projectTitles.forEach(({heading, title, originalMarkup, fullTitle}) => {
+        title.innerHTML = originalMarkup;
+        heading.classList.remove("is-truncated");
+        title.classList.add("is-measuring");
+
+        const getLineCount = () => {
+            const range = document.createRange();
+            range.selectNodeContents(title);
+            return new Set(Array.from(range.getClientRects(), rect => Math.round(rect.top))).size;
+        };
+
+        if(getLineCount() > 2){
+            let shortenedTitle = fullTitle;
+            while(shortenedTitle.length && getLineCount() > 2){
+                shortenedTitle = shortenedTitle.slice(0, -1).trimEnd();
+                title.textContent = `${shortenedTitle}…`;
+            }
+            heading.classList.add("is-truncated");
+        }
+
+        title.classList.remove("is-measuring");
+    });
+}
+
+updateProjectTitleTruncation();
+window.addEventListener("resize", updateProjectTitleTruncation);
+if(document.fonts){
+    document.fonts.ready.then(updateProjectTitleTruncation);
+}
 
 
 // sending contact details and message
 (function(){
-    emailjs.init("HFBXJteDkhD-_bPSi"); // your Public Key
+    emailjs.init("WZOEL_bz7_NQjzaGO"); // your Public Key
 })();
 
 document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -132,7 +202,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     if (name && email && address && phone && message) {
 
         // First send email
-        emailjs.send("service_umu1hqd", "template_pin9bwl", {
+        emailjs.send("service_u96tx7s", "service_u96tx7s", {
             from_name: name,
             from_email: email,
             address: address,
