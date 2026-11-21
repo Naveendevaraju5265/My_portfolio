@@ -11,13 +11,14 @@
 <body>
     <!-- header site -->
     <header>
-        <div class="logo"><a href="" style="color: aqua;">Naveen.</a></div>
+        <div class="logo"><a href="">Naveen.D</a></div>
         <ul class="navlist">
             <li><a href="#home" style="--i:1;">Home</a></li>
             <li><a href="#about" style="--i:2;">About</a></li>
             <li><a href="#skills" style="--i:3;">Skills</a></li>
             <li><a href="#portfolio" style="--i:4;">Projects</a></li>
             <li><a href="#contact" style="--i:5;">Contact</a></li>
+            <li><button id="theme-toggle" class="theme-toggle bx bx-bulb" type="button" aria-label="Switch to light mode"></button></li>
         </ul>
         <div id="menu-icon" class="bx bx-menu"></div>
     </header>
@@ -265,8 +266,21 @@
         <div class="tech scroll-scale">
             <span class="tech1">Figma</span>
         </div>
+
         <div class="work-experience scroll-scale">
             <span>Work Experience</span>
+
+            <div class="experience-card">
+                <div class="logo">
+                  <img src="img/75F-logo.jpg" alt="75F logo">
+                </div>
+                <div class="details">
+                  <p class="duration">Sep 2025 (Present)</p>
+                  <h3 class="title">Associate Software Engineer</h3>
+                  <p class="company"><a href="https://www.75f.io/en-in" target="_blank">75F Smart Innovations India Pvt Ltd </a>| Full Time</p>
+                </div>
+            </div>
+
             <div class="experience-card">
                 <div class="logo">
                   <img src="img/logo.png" alt="company-logo">
@@ -278,6 +292,7 @@
                 </div>
             </div>
         </div>
+
         <div class="certificate scroll-scale">
             <span>Certifications</span>
             <div class="timeline-1">
@@ -391,8 +406,8 @@
                         <img src="img/1.jpg" alt="">
                     </div>
                     <div class="port-content">
-                        <h3>Food delivery application</h3>
-                        <p>Online food ordering platform built using MERN stack featuring user authentication, dynamic shopping cart functionality, an admin panel for order management, and secure stipe payment integration.</p>
+                        <h3 data-tooltip="Food delivery application"><span>Food delivery application</span></h3>
+                        <p data-tooltip="Online food ordering platform built using MERN stack featuring user authentication, dynamic shopping cart functionality, an admin panel for order management, and secure stipe payment integration."><span>Online food ordering platform built using MERN stack featuring user authentication, dynamic shopping cart functionality, an admin panel for order management, and secure stipe payment integration.</span></p>
                         <a href="https://github.com/Naveendevaraju5265/Food-delivery-Application" target="_blank"><i class="bx bx-link-external"></i></a>
                     </div>
                 </div>
@@ -402,8 +417,8 @@
                         <img src="img/2.jpg" alt="">
                     </div>
                     <div class="port-content">
-                        <h3>PAYANA App</h3>
-                        <p>An end-to-end travel management platform designed to streamline tour bookings, customer inquiries, and package management.</p>
+                        <h3 data-tooltip="PAYANA App"><span>PAYANA App</span></h3>
+                        <p data-tooltip="An end-to-end travel management platform designed to streamline tour bookings, customer inquiries, and package management."><span>An end-to-end travel management platform designed to streamline tour bookings, customer inquiries, and package management.</span></p>
                         <a href="https://github.com/Naveendevaraju5265/PAYANA-Tours-and-Travels" target="_blank"><i class="bx bx-link-external"></i></a>
                     </div>
                 </div>
@@ -413,8 +428,8 @@
                         <img src="img/3.jpg" alt="">
                     </div>
                     <div class="port-content">
-                        <h3>Medication advisor</h3>
-                        <p>An intelligent healthcare assistant designed to suggest appropriate medications based on user-described symptoms or diagnosed conditions.</p>
+                        <h3 data-tooltip="Medication advisor"><span>Medication advisor</span></h3>
+                        <p data-tooltip="An intelligent healthcare assistant designed to suggest appropriate medications based on user-described symptoms or diagnosed conditions."><span>An intelligent healthcare assistant designed to suggest appropriate medications based on user-described symptoms or diagnosed conditions.</span></p>
                         <a href="https://github.com/Naveendevaraju5265/Medication-Advisor" target="_blank"><i class="bx bx-link-external"></i></a>
                     </div>
                 </div>
@@ -424,8 +439,8 @@
                         <img src="img/4.jpg" alt="">
                     </div>
                     <div class="port-content">
-                        <h3>Railway Reservation Management System</h3>
-                        <p>web-based application developed to simplify train ticket booking and reservation management,supports user registration, seat availability, ticket booking, cancellation, and admin control.</p>
+                        <h3 data-tooltip="Railway Reservation Management System"><span>Railway Reservation Management System</span></h3>
+                        <p data-tooltip="web-based application developed to simplify train ticket booking and reservation management,supports user registration, seat availability, ticket booking, cancellation, and admin control."><span>web-based application developed to simplify train ticket booking and reservation management,supports user registration, seat availability, ticket booking, cancellation, and admin control.</span></p>
                         <a href="https://github.com/Naveendevaraju5265/Railway-Reservation-Management-System" target="_blank"><i class="bx bx-link-external"></i></a>
                     </div>
                 </div>
@@ -435,8 +450,8 @@
                         <img src="img/5.jpg" alt="">
                     </div>
                     <div class="port-content">
-                        <h3>BlockChain Project</h3>
-                        <p>blockchain-based student attendance system designed to overcome the limitations of traditional attendance tracking methods in educational institutions Leveraging decentralized ledger technology.</p>
+                        <h3 data-tooltip="BlockChain Project"><span>BlockChain Project</span></h3>
+                        <p data-tooltip="blockchain-based student attendance system designed to overcome the limitations of traditional attendance tracking methods in educational institutions Leveraging decentralized ledger technology."><span>blockchain-based student attendance system designed to overcome the limitations of traditional attendance tracking methods in educational institutions Leveraging decentralized ledger technology.</span></p>
                         <a href="https://github.com/Naveendevaraju5265/Blockchain-based-Student-Attendance-Management-System" target="_blank"><i class="bx bx-link-external"></i></a>
                     </div>
                 </div>
@@ -446,8 +461,8 @@
                         <img src="img/6.jpg" alt="">
                     </div>
                     <div class="port-content">
-                        <h3>SmartBuy<br>E-commerce-Website</h3>
-                        <p>A responsive and dynamic online E-commerce platform built using HTML, CSS, and React.js. Features include product browsing, user authentication, shopping cart functionality.</p>
+                        <h3 data-tooltip="SmartBuy E-commerce-Website"><span>SmartBuy<br>E-commerce-Website</span></h3>
+                        <p data-tooltip="A responsive and dynamic online E-commerce platform built using HTML, CSS, and React.js. Features include product browsing, user authentication, shopping cart functionality."><span>A responsive and dynamic online E-commerce platform built using HTML, CSS, and React.js. Features include product browsing, user authentication, shopping cart functionality.</span></p>
                         <a href="https://github.com/Naveendevaraju5265/SmartBuy-E-commerce-Website" target="_blank"><i class="bx bx-link-external"></i></a>
                     </div>
                 </div>
